@@ -1,6 +1,6 @@
 # BlockD3 CertVault: Secure Hybrid Blockchain Architecture for Academic Credential Verification
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.placeholder.svg)](https://zenodo.org/)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23687666.svg)](https://doi.org/10.5281/zenodo.23687666)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Fabric v2.5](https://img.shields.io/badge/Hyperledger_Fabric-v2.5-orange.svg)](https://www.hyperledger.org/use/fabric)
 [![ICP](https://img.shields.io/badge/Internet_Computer-DFX_Canister-purple.svg)](https://internetcomputer.org/)
@@ -363,7 +363,7 @@ If you use BlockD3 CertVault in your research, please cite:
   institution={Kapasa Makasa University},
   year={2026},
   url={https://github.com/grabrielzone26-sys/BlockD3-CertVault},
-  doi={10.5281/zenodo.XXXXXXX}
+  doi={10.5281/zenodo.23687666}
 }
 ```
 
