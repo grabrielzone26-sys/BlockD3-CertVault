@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "canisters": {
+    "cert_registry": {
+      "type": "motoko",
+      "main": "src/cert_registry/main.mo"
+    }
+}
+}

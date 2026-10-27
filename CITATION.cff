@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use this software, empirical benchmark artifacts, or survey dataset in your research, please cite it as below."
+authors:
+  - family-names: "BlockD3 CertVault Team"
+title: "BlockD3 CertVault: Secure Hybrid Blockchain Architecture for Academic Credential Verification"
+version: 1.0.0
+date-released: 2026-10-27
+url: "https://github.com/grabrielzone26-sys/BlockD3-CertVault"
+keywords:
+  - "blockchain"
+  - "hyperledger-fabric"
+  - "internet-computer-protocol"
+  - "credential-verification"
+  - "empirical-benchmark"
+  - "academic-integrity"
+  - "cryptography"

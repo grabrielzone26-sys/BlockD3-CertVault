@@ -1,0 +1,115 @@
+{
+  "system": {
+    "name": "BlockD3 CertVault",
+    "description": "Blockchain Certificate Verification System",
+    "version": "1.0.0",
+    "author": "Kapasa Makasa University"
+  },
+  "requirements": {
+    "nodejs": "v16 or higher",
+    "git": "latest version"
+  },
+  "network": {
+    "fabric": {
+      "channel": "mychannel",
+      "chaincode": "certificates",
+      "connectionProfile": "blockchain/fabric/connection-profiles/connection-org1.json"
+    },
+    "backend": {
+      "host": "localhost",
+      "port": 5000,
+      "url": "http://localhost:5000"
+    },
+    "frontend": {
+      "host": "localhost",
+      "port": 3000,
+      "url": "http://localhost:3000"
+    }
+  },
+  "environment": {
+    "backend": {
+      "JWT_SECRET": "your_jwt_secret_key",
+      "PORT": "5000"
+    },
+    "frontend": {
+      "REACT_APP_API_URL": "http://localhost:5000",
+      "REACT_APP_BLOCKCHAIN_NETWORK": "fabric"
+    }
+  },
+  "startup_sequence": [
+    {
+      "step": 1,
+      "name": "Install Dependencies",
+      "command": "npm run install:all",
+      "description": "Install all project dependencies"
+    },
+    {
+      "step": 2,
+      "name": "Start Fabric Network",
+      "command": "Start your Fabric network in Ubuntu",
+      "description": "Bring up the Hyperledger Fabric network"
+    },
+    {
+      "step": 3,
+      "name": "Deploy Fabric Chaincode",
+      "command": "Deploy chaincode from blockchain/fabric/chaincode/certificates",
+      "description": "Install and commit chaincode to the Fabric channel"
+    },
+    {
+      "step": 4,
+      "name": "Start Backend",
+      "command": "cd backend && npm run dev",
+      "description": "Start Node.js backend server"
+    },
+    {
+      "step": 5,
+      "name": "Start Frontend",
+      "command": "cd frontend && npm start",
+      "description": "Start React frontend development server"
+    }
+  ],
+  "test_users": [
+    {
+      "role": "admin",
+      "email": "admin@blockd3.com",
+      "password": "admin123",
+      "permissions": ["issue_certificates", "manage_users", "view_analytics"]
+    },
+    {
+      "role": "student",
+      "email": "student@blockd3.com",
+      "password": "student123",
+      "permissions": ["view_certificates", "download_certificates"]
+    },
+    {
+      "role": "verifier",
+      "email": "verifier@blockd3.com",
+      "password": "verifier123",
+      "permissions": ["verify_certificates", "view_verification_history"]
+    }
+  ],
+  "api_endpoints": {
+    "authentication": {
+      "login": "POST /api/auth/login",
+      "register": "POST /api/auth/register",
+      "profile": "GET /api/auth/profile",
+      "logout": "POST /api/auth/logout"
+    },
+    "certificates": {
+      "issue": "POST /api/certificates/issue",
+      "list": "GET /api/certificates/list",
+      "details": "GET /api/certificates/:id",
+      "verify": "POST /api/certificates/verify"
+    },
+    "admin": {
+      "stats": "GET /api/admin/stats",
+      "users": "GET /api/admin/users",
+      "activity": "GET /api/admin/recent-activity"
+    }
+  },
+  "project_structure": {
+    "backend": "Node.js backend server",
+    "frontend": "React frontend application",
+    "fabric": "Hyperledger Fabric chaincode and configuration"
+  }
+}

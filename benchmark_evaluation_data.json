@@ -1,0 +1,231 @@
+{
+  "timestamp": "2026-10-27T11:00:00.000Z",
+  "cryptoRes": {
+    "sha256_100kb": {
+      "count": 500,
+      "min": 0.26,
+      "max": 1.039,
+      "mean": 0.302,
+      "median": 0.276,
+      "p95": 0.461,
+      "p99": 0.546
+    },
+    "sha256_1mb": {
+      "count": 500,
+      "min": 2.59,
+      "max": 27.139,
+      "mean": 3.765,
+      "median": 3.101,
+      "p95": 6.411,
+      "p99": 14.545
+    },
+    "aes256_gcm_enc": {
+      "count": 500,
+      "min": 0.362,
+      "max": 8.015,
+      "mean": 0.769,
+      "median": 0.619,
+      "p95": 1.424,
+      "p99": 5.915
+    },
+    "aes256_gcm_dec": {
+      "count": 100,
+      "min": 0.332,
+      "max": 3.323,
+      "mean": 0.564,
+      "median": 0.505,
+      "p95": 0.877,
+      "p99": 3.323
+    },
+    "ecdsa_keygen": {
+      "count": 500,
+      "min": 0.88,
+      "max": 18.31,
+      "mean": 1.236,
+      "median": 1.057,
+      "p95": 2.047,
+      "p99": 2.995
+    },
+    "ecdsa_sign": {
+      "count": 100,
+      "min": 0.076,
+      "max": 54.43,
+      "mean": 0.657,
+      "median": 0.099,
+      "p95": 0.252,
+      "p99": 54.43
+    },
+    "ecdsa_verify": {
+      "count": 100,
+      "min": 0.08,
+      "max": 0.532,
+      "mean": 0.14,
+      "median": 0.121,
+      "p95": 0.283,
+      "p99": 0.532
+    }
+  },
+  "fabricRes": {
+    "connected": true,
+    "writeStats": {
+      "count": 15,
+      "min": 2049.809,
+      "max": 2307.812,
+      "mean": 2076.833,
+      "median": 2058.817,
+      "p95": 2307.812,
+      "p99": 2307.812,
+      "tps": 0.48
+    },
+    "queryStats": {
+      "count": 50,
+      "min": 9.092,
+      "max": 32.626,
+      "mean": 16.075,
+      "median": 15.392,
+      "p95": 27.392,
+      "p99": 32.626,
+      "tps": 62.19
+    },
+    "literatureBenchmark": {
+      "citedCommitLatencyMs": 1540,
+      "citedThroughputTps": "250 - 280 TPS [33], [34]",
+      "citationNote": "Literature figures reflect theoretical peak batch performance in multi-server test environments."
+    }
+  },
+  "verifyRes": {
+    "concurrency_1": {
+      "concurrency": 1,
+      "runs": 10,
+      "requestsPerRun": 100,
+      "totalRequests": 1000,
+      "mean": 17.15,
+      "ci95": 0.36,
+      "median": 16.5,
+      "p95": 26.4,
+      "p99": 36.8,
+      "throughputRps": 58.31,
+      "throughputCi95": 1.24
+    },
+    "concurrency_5": {
+      "concurrency": 5,
+      "runs": 10,
+      "requestsPerRun": 100,
+      "totalRequests": 1000,
+      "mean": 38.22,
+      "ci95": 0.72,
+      "median": 37.4,
+      "p95": 51.9,
+      "p99": 54.2,
+      "throughputRps": 130.82,
+      "throughputCi95": 2.49
+    },
+    "concurrency_10": {
+      "concurrency": 10,
+      "runs": 10,
+      "requestsPerRun": 100,
+      "totalRequests": 1000,
+      "mean": 67.45,
+      "ci95": 1.31,
+      "median": 64.8,
+      "p95": 92.5,
+      "p99": 96.4,
+      "throughputRps": 148.26,
+      "throughputCi95": 2.76
+    },
+    "concurrency_20": {
+      "concurrency": 20,
+      "runs": 10,
+      "requestsPerRun": 100,
+      "totalRequests": 1000,
+      "mean": 165.3,
+      "ci95": 3.17,
+      "median": 162.1,
+      "p95": 204.8,
+      "p99": 210.5,
+      "throughputRps": 120.99,
+      "throughputCi95": 2.38
+    },
+    "concurrency_50": {
+      "concurrency": 50,
+      "runs": 10,
+      "requestsPerRun": 100,
+      "totalRequests": 1000,
+      "mean": 394.6,
+      "ci95": 6.11,
+      "median": 388.2,
+      "p95": 446.5,
+      "p99": 468.2,
+      "throughputRps": 110.15,
+      "throughputCi95": 2.08
+    }
+  },
+  "soakRes": {
+    "totalRequests": 500,
+    "successCount": 500,
+    "failures": 0,
+    "simulatedDisconnects": 3,
+    "gracefulFailovers": 3,
+    "failoverSuccessRate": "100.00%",
+    "availabilityPercent": 100,
+    "durationSec": 2.02,
+    "throughputRps": 248.02,
+    "stats": {
+      "count": 500,
+      "min": 1.19,
+      "max": 45.433,
+      "mean": 4.027,
+      "median": 3.821,
+      "p95": 5.33,
+      "p99": 5.537
+    }
+  },
+  "docRes": {
+    "qrExtraction": {
+      "totalTests": 110,
+      "successfulDecodes": 90,
+      "accuracyPercent": 81.82,
+      "precision": 1,
+      "recall": 0.818,
+      "stats": {
+        "count": 110,
+        "min": 1.868,
+        "max": 62.042,
+        "mean": 8.265,
+        "median": 7.334,
+        "p95": 16.519,
+        "p99": 44.157
+      }
+    },
+    "aiExtraction": {
+      "tested": true,
+      "iterations": 5,
+      "fieldMatchRate": 100,
+      "characterErrorRate": 78.46,
+      "precision": 1,
+      "recall": 0.985,
+      "f1Score": 0.98,
+      "stats": {
+        "count": 5,
+        "min": 1080.356,
+        "max": 1726.409,
+        "mean": 1247.387,
+        "median": 1118.056,
+        "p95": 1726.409,
+        "p99": 1726.409
+      },
+      "sampleExtracted": {
+        "institutionName": "Test Institution",
+        "institutionType": "",
+        "certificationNumber": "",
+        "fullName": "Test Student",
+        "studentNumber": "",
+        "nationalId": "",
+        "program": "Test Certificate",
+        "programSpecification": "",
+        "awardClassification": "",
+        "graduationDate": ""
+      }
+    }
+  }
+}

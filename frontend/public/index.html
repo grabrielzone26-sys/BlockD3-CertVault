@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" type="image/png" href="%PUBLIC_URL%/logo.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, viewport-fit=cover" />
+  <meta name="theme-color" content="#0A0E17" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="description" content="BlockD3 CertVault - Blockchain Certificate Verification System" />
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo.png" />
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Sora:wght@200;300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <script>
+    // Suppress external browser extension crashes (e.g. Urban VPN proxy chrome-extension://...)
+    window.addEventListener('error', function(e) {
+      var fn = String(e.filename || '');
+      var msg = String(e.message || '');
+      var stk = String((e.error && e.error.stack) || '');
+      if (fn.indexOf('chrome-extension://') !== -1 ||
+          fn.indexOf('moz-extension://') !== -1 ||
+          stk.indexOf('chrome-extension://') !== -1 ||
+          msg.indexOf("reading 'M_ID'") !== -1 ||
+          msg.indexOf('M_ID') !== -1) {
+        e.stopImmediatePropagation();
+        e.preventDefault();
+        return true;
+      }
+    }, true);
+    window.addEventListener('unhandledrejection', function(e) {
+      var r = e.reason;
+      var str = String(r ? (r.stack || r.message || r) : '');
+      if (str.indexOf('chrome-extension://') !== -1 || str.indexOf('M_ID') !== -1) {
+        e.stopImmediatePropagation();
+        e.preventDefault();
+      }
+    }, true);
+  </script>
+  <title>BlockD3 CertVault</title>
+</head>
+
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root">
+    <div
+      style="min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; background: #070d1e; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #f8fbff;">
+      <div
+        style="display: flex; align-items: center; gap: 12px; padding: 18px 24px; border-radius: 16px; background: rgba(8, 22, 48, 0.9); border: 1px solid rgba(120, 182, 255, 0.2); box-shadow: 0 20px 50px rgba(0,0,0,0.5);">
+        <div
+          style="width: 24px; height: 24px; border: 2.5px solid rgba(34, 216, 255, 0.2); border-top-color: #22d8ff; border-radius: 50%; animation: initialSpin 0.75s linear infinite;">
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 2px;">
+          <span
+            style="font-size: 10px; font-weight: 700; letter-spacing: 0.15em; color: #8ac9ff; text-transform: uppercase;">BlockD3</span>
+          <span style="font-size: 14px; font-weight: 600; color: #f8fbff;">Loading Vault...</span>
+        </div>
+      </div>
+      <style>
+        @keyframes initialSpin {
+          0% {
+            transform: rotate(0deg);
+          }
+
+          100% {
+            transform: rotate(360deg);
+          }
+        }
+      </style>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,16 @@
+{
+  "short_name": "BlockD3 CertVault",
+  "name": "BlockD3 CertVault - Certificate Verification",
+  "icons": [
+    {
+      "src": "logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#020817",
+  "background_color": "#020817"
+}

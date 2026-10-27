@@ -1,0 +1,627 @@
+.loading-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  display: grid;
+  place-items: center;
+  padding: 1.25rem;
+  color: #f8fbff;
+  background:
+    radial-gradient(ellipse at center, rgba(8, 26, 60, 0.5) 0%, rgba(2, 8, 23, 0.8) 100%),
+    rgba(2, 8, 23, 0.45);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.loading-overlay-route {
+  animation: loadingOverlayIn 160ms ease-out both;
+}
+
+/* Background Glowing Ambient Aura */
+.loading-aura {
+  position: absolute;
+  width: 22rem;
+  height: 22rem;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(34, 216, 255, 0.18) 0%, rgba(99, 102, 241, 0.12) 45%, transparent 70%);
+  filter: blur(55px);
+  pointer-events: none;
+  animation: loadingAuraPulse 3.5s ease-in-out infinite alternate;
+}
+
+@keyframes loadingAuraPulse {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.65;
+  }
+  100% {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+}
+
+/* Central Card Panel */
+.loading-panel {
+  position: relative;
+  width: min(100%, 28rem);
+  display: grid;
+  gap: 1.15rem;
+  padding: 1.35rem 1.4rem;
+  border-radius: 1.1rem;
+  border: 1px solid rgba(56, 189, 248, 0.22);
+  background:
+    radial-gradient(circle at 10% 15%, rgba(14, 38, 82, 0.85) 0%, rgba(5, 14, 34, 0.94) 100%);
+  box-shadow:
+    0 28px 80px rgba(0, 0, 0, 0.55),
+    0 0 30px rgba(34, 216, 255, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+/* Subtle Cyber Grid Overlay inside Panel */
+.loading-panel::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(56, 189, 248, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(56, 189, 248, 0.03) 1px, transparent 1px);
+  background-size: 18px 18px;
+  pointer-events: none;
+}
+
+/* Cyber HUD Corner Reticles */
+.hud-bracket {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  pointer-events: none;
+}
+
+.hud-bracket-tl {
+  top: 6px;
+  left: 6px;
+  border-top: 2px solid #38bdf8;
+  border-left: 2px solid #38bdf8;
+}
+
+.hud-bracket-tr {
+  top: 6px;
+  right: 6px;
+  border-top: 2px solid #38bdf8;
+  border-right: 2px solid #38bdf8;
+}
+
+.hud-bracket-bl {
+  bottom: 6px;
+  left: 6px;
+  border-bottom: 2px solid #38bdf8;
+  border-left: 2px solid #38bdf8;
+}
+
+.hud-bracket-br {
+  bottom: 6px;
+  right: 6px;
+  border-bottom: 2px solid #38bdf8;
+  border-right: 2px solid #38bdf8;
+}
+
+/* Brand Header */
+.loading-brand {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 1.1rem;
+  align-items: center;
+  z-index: 2;
+}
+
+/* Orbital Rings around Logo */
+.loading-orbit-wrap {
+  position: relative;
+  width: 3.8rem;
+  height: 3.8rem;
+  display: grid;
+  place-items: center;
+}
+
+.loading-orbit-outer {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1px dashed rgba(34, 216, 255, 0.5);
+  animation: orbitRotate 9s linear infinite;
+}
+
+.loading-orbit-inner {
+  position: absolute;
+  inset: 4px;
+  border-radius: 50%;
+  border: 1px dotted rgba(129, 140, 248, 0.45);
+  animation: orbitRotateReverse 6s linear infinite;
+}
+
+@keyframes orbitRotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes orbitRotateReverse {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+.loading-logo-frame {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 2.65rem;
+  height: 2.65rem;
+  overflow: hidden;
+  border-radius: 0.75rem;
+  background: #ffffff;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.15),
+    0 8px 24px rgba(34, 216, 255, 0.25);
+  z-index: 1;
+}
+
+.loading-logo-frame::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(115deg, transparent 0 34%, rgba(34, 216, 255, 0.28) 46%, transparent 58%);
+  transform: translateX(-120%);
+  animation: loadingLogoSheen 2.2s ease-in-out infinite;
+}
+
+.loading-logo-frame img {
+  width: 1.85rem;
+  height: 1.85rem;
+  object-fit: contain;
+}
+
+.loading-copy {
+  display: grid;
+  min-width: 0;
+  gap: 0.25rem;
+}
+
+.loading-kicker-row {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.loading-kicker {
+  color: #38bdf8;
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.loading-live-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.1rem 0.4rem;
+  border-radius: 999px;
+  background: rgba(34, 197, 94, 0.12);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  color: #4ade80;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.loading-pulse-dot {
+  width: 0.35rem;
+  height: 0.35rem;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 6px #22c55e;
+  animation: liveDotPulse 1.2s ease-in-out infinite;
+}
+
+@keyframes liveDotPulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(0.7);
+  }
+}
+
+.loading-text {
+  overflow: hidden;
+  color: #f8fbff;
+  font-family: 'Sora', 'Trebuchet MS', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.loading-subtext {
+  color: #94a3b8;
+  font-size: 0.76rem;
+  line-height: 1.35;
+  font-weight: 400;
+}
+
+/* Named Multi-Chain Nodes Handshake */
+.loading-nodes-stage {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.4rem;
+  padding: 0.75rem 0.85rem;
+  border-radius: 0.75rem;
+  background: rgba(4, 12, 28, 0.7);
+  border: 1px solid rgba(120, 182, 255, 0.14);
+  z-index: 2;
+}
+
+.loading-chain-node {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  transition: all 0.3s ease;
+}
+
+.chain-node-icon {
+  display: grid;
+  place-items: center;
+  width: 1.4rem;
+  height: 1.4rem;
+  border-radius: 50%;
+  font-size: 0.68rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.node-standby .chain-node-icon {
+  background: rgba(148, 163, 184, 0.1);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  color: #64748b;
+}
+
+.node-standby .chain-node-name {
+  color: #64748b;
+}
+
+.node-standby .chain-node-sub {
+  color: #475569;
+}
+
+.node-current .chain-node-icon {
+  background: rgba(34, 216, 255, 0.2);
+  border: 1px solid #38bdf8;
+  color: #38bdf8;
+  box-shadow: 0 0 12px rgba(56, 189, 248, 0.5);
+  animation: nodeCurrentGlow 1.2s ease-in-out infinite alternate;
+}
+
+@keyframes nodeCurrentGlow {
+  0% {
+    box-shadow: 0 0 6px rgba(56, 189, 248, 0.4);
+    transform: scale(1);
+  }
+  100% {
+    box-shadow: 0 0 16px rgba(56, 189, 248, 0.85);
+    transform: scale(1.08);
+  }
+}
+
+.node-current .chain-node-name {
+  color: #f1f5f9;
+  font-weight: 600;
+}
+
+.node-current .chain-node-sub {
+  color: #38bdf8;
+}
+
+.node-confirmed .chain-node-icon {
+  background: rgba(34, 197, 94, 0.18);
+  border: 1px solid #22c55e;
+  color: #4ade80;
+  box-shadow: 0 0 8px rgba(34, 197, 94, 0.35);
+}
+
+.node-confirmed .chain-node-name {
+  color: #cbd5e1;
+}
+
+.node-confirmed .chain-node-sub {
+  color: #4ade80;
+}
+
+.chain-node-meta {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.chain-node-name {
+  font-family: 'Sora', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.chain-node-sub {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.58rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: color 0.3s ease;
+}
+
+/* Chain Connector Line with Packet Animation */
+.loading-chain-connector {
+  position: relative;
+  flex: 1;
+  height: 2px;
+  background: rgba(120, 182, 255, 0.14);
+  overflow: hidden;
+  border-radius: 999px;
+}
+
+.connector-active {
+  background: rgba(56, 189, 248, 0.28);
+}
+
+.connector-packet {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, #38bdf8, transparent);
+  box-shadow: 0 0 8px #38bdf8;
+  animation: packetStreak 1.4s ease-in-out infinite;
+}
+
+@keyframes packetStreak {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(300%);
+  }
+}
+
+/* High-Tech Progress Bar */
+.loading-progress {
+  position: relative;
+  width: 100%;
+  height: 0.28rem;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(120, 182, 255, 0.12);
+  border: 1px solid rgba(56, 189, 248, 0.12);
+  z-index: 2;
+}
+
+.loading-progress span {
+  display: block;
+  width: 38%;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #0284c7, #38bdf8, #22d8ff);
+  box-shadow: 0 0 16px rgba(34, 216, 255, 0.7);
+  animation: loadingProgress 1.4s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+
+/* Cryptographic Hash Stream Ticker */
+.loading-crypto-ticker {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.45rem 0.65rem;
+  border-radius: 0.5rem;
+  background: rgba(2, 6, 23, 0.65);
+  border: 1px solid rgba(120, 182, 255, 0.1);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.66rem;
+  line-height: 1;
+  z-index: 2;
+}
+
+.ticker-label {
+  color: #64748b;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.ticker-hash {
+  color: #38bdf8;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+  text-shadow: 0 0 8px rgba(56, 189, 248, 0.4);
+}
+
+.ticker-status {
+  padding: 0.12rem 0.35rem;
+  border-radius: 4px;
+  background: rgba(34, 197, 94, 0.12);
+  color: #4ade80;
+  font-size: 0.58rem;
+  font-weight: 700;
+}
+
+
+@media (max-width: 480px) {
+  .loading-panel {
+    width: min(100%, 20rem);
+  }
+
+  .loading-text {
+    font-size: 0.9rem;
+  }
+}
+
+/* Card & Inline variants */
+.loading-overlay-card {
+  position: absolute;
+  border-radius: inherit;
+  z-index: 20;
+}
+
+.loading-subtext {
+  color: #94a3b8;
+  font-size: 0.78rem;
+  line-height: 1.3;
+}
+
+.loading-inline-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0.85rem;
+  border-radius: 0.6rem;
+  background: rgba(8, 22, 48, 0.6);
+  border: 1px solid rgba(120, 182, 255, 0.16);
+  color: #cbd5e1;
+  font-size: 0.85rem;
+}
+
+.loading-ledger-compact {
+  padding: 0;
+  gap: 0.35rem;
+}
+
+.loading-ledger-compact .loading-ledger-node {
+  width: 0.42rem;
+  height: 0.42rem;
+}
+
+.loading-inline-text {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  color: #93c5fd;
+}
+
+/* Timeout Notice & Escape Hatch */
+.loading-timeout-notice {
+  display: grid;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  border-radius: 0.65rem;
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  animation: loadingOverlayIn 200ms ease-out both;
+}
+
+.loading-timeout-notice p {
+  margin: 0;
+  font-size: 0.78rem;
+  color: #fca5a5;
+  line-height: 1.4;
+}
+
+.loading-timeout-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.loading-timeout-btn {
+  padding: 0.35rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 0.4rem;
+  border: 1px solid #38bdf8;
+  background: #0284c7;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.loading-timeout-btn:hover {
+  background: #0369a1;
+}
+
+.loading-timeout-btn-secondary {
+  padding: 0.35rem 0.75rem;
+  font-size: 0.75rem;
+  border-radius: 0.4rem;
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  background: transparent;
+  color: #94a3b8;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.loading-timeout-btn-secondary:hover {
+  color: #f1f5f9;
+  border-color: rgba(148, 163, 184, 0.5);
+}
+
+/* Sleek Top Route Progress Bar */
+.route-top-loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  z-index: 9999;
+  pointer-events: none;
+  background: transparent;
+}
+
+.route-top-loader-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #0284c7, #22d8ff, #38bdf8);
+  box-shadow: 0 0 10px #22d8ff, 0 0 5px #0284c7;
+  animation: routeTopProgress 450ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+@keyframes routeTopProgress {
+  0% {
+    width: 0%;
+    opacity: 1;
+  }
+  65% {
+    width: 78%;
+    opacity: 1;
+  }
+  90% {
+    width: 98%;
+    opacity: 1;
+  }
+  100% {
+    width: 100%;
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .loading-overlay,
+  .loading-logo-frame::after,
+  .loading-ledger-node,
+  .loading-ledger-line::after,
+  .loading-progress span,
+  .route-top-loader-bar {
+    animation-duration: 1ms;
+    animation-iteration-count: 1;
+  }
+}
+
