@@ -77,3 +77,11 @@ backend/.icp-bridge-identity.json
 *.p12
 *.bak
 *.tmp.docx
+
+# Thesis drafts & local scratch scripts
+KMU_THESIS.md
+THESIS_DRAFT.md
+benchmark_evaluation_results.md
+scripts/apply_benchmarks_to_docx.py
+scripts/check_collected_lines.py
+scripts/test-certificate.pdf
