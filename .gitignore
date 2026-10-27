@@ -85,3 +85,7 @@ benchmark_evaluation_results.md
 scripts/apply_benchmarks_to_docx.py
 scripts/check_collected_lines.py
 scripts/test-certificate.pdf
+
+# Sensitive participant-level survey responses (Ethics & Privacy)
+data/*_Responses*
+data/*_SYNTHETIC*

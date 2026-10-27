@@ -1,0 +1,28 @@
+{
+  "title": "Academic Certificate and Results Verification Survey: Aggregate Summary",
+  "jurisdiction": "Zambia",
+  "sampleSize": 362,
+  "samplingMethodology": "Non-probabilistic cross-sectional survey with informed consent",
+  "ethicsCompliance": "Anonymized aggregate reporting. Participant-level microdata restricted under Zambian Data Protection Act No. 3 of 2021 principles.",
+  "aggregateFindings": {
+    "informedConsentRatePercent": 100.0,
+    "primaryVerificationChallenges": {
+      "slowOrMissingInstitutionalResponsePercent": 56.1,
+      "paperCredentialForgeryTamperingConcernPercent": 23.2,
+      "verificationFeesAndCostsPercent": 20.7
+    },
+    "impactsOfVerificationDelays": {
+      "missedEmploymentOrEducationalOpportunitiesPercent": 34.3,
+      "elevatedStressOrAnxietyPercent": 33.4,
+      "highFinancialOrTravelExpensePercent": 20.7
+    },
+    "infrastructureAndOperationalConstraints": {
+      "connectivityAndPowerOutagesConcernPercent": 29.6,
+      "privacyAndDataProtectionConcernsPercent": 25.7,
+      "lackOfStatutoryLegalBackingConcernPercent": 24.0
+    },
+    "systemUtilityPerception": {
+      "ratedInstantSecureVerificationAsHighlyUsefulPercent": 99.7
+    }
+  }
+}
