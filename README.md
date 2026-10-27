@@ -341,18 +341,22 @@ Frontend work can now proceed against the local backend and local blockchain sta
 
 ## 15) Empirical Benchmark Replication
 
-To reproduce the multi-run concurrent verification benchmarks (Table VIII and Figure 4 in the research paper):
+The empirical measurements reported in Section V of the paper reflect direct prototype execution across cryptographic operations, Hyperledger Fabric write and query transactions, concurrent verification workloads, and system soak testing:
 
 ```powershell
-# Run the multi-run benchmark suite (10 runs x 100 requests per concurrency level with 95% CIs)
-python scripts/generate_multirun_benchmark.py
+# Execute the empirical benchmark harness against the local prototype stack
+node scripts/benchmark-empirical-suite.js
 ```
 
-The script evaluates concurrency tiers (1, 5, 10, 20, 50 clients), computes Student's t 95% confidence intervals, medians, P95, and P99 percentiles, and generates `docs/figures/performance.png`.
+Raw prototype measurement logs (min, mean, median, P95, P99, QPS/TPS across all concurrency levels) are archived in `benchmark_evaluation_data.json`, and Figure 4 is preserved in `docs/figures/performance.png`.
 
-Raw benchmark logs and metrics are archived in `benchmark_evaluation_data.json`.
+## 16) Survey Instrument & Data Availability
 
-## 16) Citation
+- **Blank Survey Questionnaire**: Preserved in `data/Academic Certificate and Results Verification Survey.xlsx`.
+- **Aggregate Summary Statistics**: Archived in `data/survey_aggregate_summary.json` ($n = 362$ respondents).
+- **Participant Privacy Protocol**: In accordance with participant informed consent and the Zambian Data Protection Act No. 3 of 2021, individual participant-level microdata responses are restricted from public dissemination to prevent re-identification. Peer reviewers may request confidential evaluation access.
+
+## 17) Citation
 
 If you use BlockD3 CertVault in your research, please cite:
 
