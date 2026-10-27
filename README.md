@@ -357,10 +357,10 @@ Raw benchmark logs and metrics are archived in `benchmark_evaluation_data.json`.
 If you use BlockD3 CertVault in your research, please cite:
 
 ```bibtex
-@article{blockd3certvault2026,
-  title={BlockD3 CertVault: Secure Hybrid Blockchain Architecture for Academic Credential Verification},
-  author={BlockD3 CertVault Research Team},
-  journal={Preprint / Code Artifact},
+@article{phiri2026blockd3,
+  title={BlockD3 CertVault: A Hybrid Hyperledger Fabric--Internet Computer Architecture for Certificate Verification in Zambia},
+  author={Phiri, Owen and Sonkwe, Elvis and Chishala, Gershom},
+  institution={Kapasa Makasa University},
   year={2026},
   url={https://github.com/grabrielzone26-sys/BlockD3-CertVault},
   doi={10.5281/zenodo.XXXXXXX}
